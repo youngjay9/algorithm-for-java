@@ -100,6 +100,8 @@ public class ArrayImpl {
 
     arr.remove_by_indx(1);
 
+    System.out.println(arr.search_by_val(""));
+
 
   }
 
