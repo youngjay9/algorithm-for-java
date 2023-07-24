@@ -59,6 +59,14 @@ public class LinkedListImpl {
       prev.next = target.next;
     }
 
+  }
 
+  public static void main(String[] args) {
+    LinkedListImpl linkedList = new LinkedListImpl();
+    linkedList.add(9);
+    linkedList.add(11);
+    linkedList.add(12);
+
+    linkedList.remove(11);
   }
 }
