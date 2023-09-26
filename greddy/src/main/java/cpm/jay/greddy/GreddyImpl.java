@@ -55,6 +55,10 @@ public class GreddyImpl {
     }
   });
 
+  public Integer getMazebest(int row, int col) {
+    return maze_best[row][col];
+  }
+
   // 計算每一格最佳 cost
   public void goMaze() {
     int rowStart = 0, colStart = 0;
@@ -102,7 +106,7 @@ public class GreddyImpl {
       }
 
       // 找 right Node
-      if (now.getCol() + 1 > maze[0].length && maze_best[now.getRow()][now.getCol() + 1] == null) {
+      if (now.getCol() + 1 < maze[0].length && maze_best[now.getRow()][now.getCol() + 1] == null) {
         Node right = new Node(now.getRow(), now.getCol() + 1);
         right.setCost(now.getCost() + maze[now.getRow()][now.getCol() + 1]);
         priorityQueue.add(right);
@@ -126,6 +130,14 @@ public class GreddyImpl {
     GreddyImpl greddy = new GreddyImpl(maze);
 
     greddy.goMaze();
+
+    System.out.println("row=2, col=2 "+greddy.getMazebest(2,2));
+    System.out.println("row=2, col=0 "+greddy.getMazebest(2,0));
+
+    System.out.println("row=2, col=1 "+greddy.getMazebest(2,1));
+    System.out.println("row=1, col=1 "+greddy.getMazebest(1,1));
+
+    System.out.println("row=0, col=2 "+greddy.getMazebest(0,2));
 
   }
 }
