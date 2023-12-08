@@ -12,6 +12,8 @@ public class QueueCircularWithArray {
 
   public QueueCircularWithArray(int size) {
     this.queue = new Integer[size];
+    this.front = 0;
+    this.rear = 0;
   }
 
   public void enQueue(int val) {
@@ -45,9 +47,8 @@ public class QueueCircularWithArray {
     circularWithArray.enQueue(10);
     circularWithArray.enQueue(7);
 
-    circularWithArray.deQueue();
+    System.out.printf("deQueue: "+circularWithArray.deQueue());
     circularWithArray.enQueue(11);
-
 
 
   }
